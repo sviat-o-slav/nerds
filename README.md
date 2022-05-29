@@ -1,23 +1,19 @@
-## About Laravel
+## Nerds Web Site Project
 
-Laravel is a web application framework with expressive, elegant syntax.
+This is a simple site project of UI market place. It is created with Laravel engine.
 
-- [Simple link](https://laravel.com/docs/routing).
+### Requirements for production
+- PHP 8.1
+- Laravel 9.1
+- Apache or Nginx
+- MariaDB 10
 
-### Premium Partners
+### Requirements for develop
+Project is constructed under Ubuntu 22.04 with Docker environment.
 
-- **[Vehikl](https://vehikl.com/)**
+- Ubuntu 22.04
+- PHP 8.1
+- Docker 20.10.*
+- Docker-Compose 1.29.*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-< aaaaaa >
-
-```
-function test(str) {
-	console.log('test);
-}
-```
+Also you can develop without Sail environment so you don't need a docker, but you need local web server as Apache or Nginx.
