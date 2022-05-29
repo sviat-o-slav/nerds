@@ -7,17 +7,19 @@ install:
 	npm install
 	php artisan key:generate
 
-install-dev: install sail-install webpack-prepare
+install-dev: install sail-install webpack
 
-webpack-prepare:
+install-prod: install prod
+
+webpack:
 	echo "const mix = require('laravel-mix');" | tee $(FILE_WEBPACK) > /dev/null
 	echo "mix.webpackConfig({ stats: { children: true, }, });" | tee -a $(FILE_WEBPACK) > /dev/null
 	echo "mix.js('resources/js/app.js', 'public/js');" | tee -a $(FILE_WEBPACK) > /dev/null
-	npm install sass-loader sass resolve-url-loader --save-dev --legacy-peer-deps
-	rm -rf ./resources/css
 	echo "mix.sass('resources/sass/app.scss', '/public/css');" | tee -a $(FILE_WEBPACK) > /dev/null
-	npm install browser-sync browser-sync-webpack-plugin --save-dev --legacy-peer-deps
 	echo "mix.browserSync({ proxy: 'localhost', open: false });" | tee -a $(FILE_WEBPACK) > /dev/null
+	rm -rf ./resources/css
+	npm install browser-sync browser-sync-webpack-plugin --save-dev --legacy-peer-deps
+    npm install sass-loader sass resolve-url-loader --save-dev --legacy-peer-deps
 
 sail-install:
 	php artisan sail:install --with mariadb
@@ -35,5 +37,5 @@ sail-down:
 watch:
 	npm run watch
 
-production:
-	npm run production
+prod:
+	npm run prod
