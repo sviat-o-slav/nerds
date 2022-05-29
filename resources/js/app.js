@@ -7,7 +7,7 @@ function ucFirstOnly (str) {
 
 function setActivePage() {
     const links = document.querySelectorAll('.nav-item a');
-    const current = document.location.href;
+    const current = document.location.origin + document.location.pathname;
 
     for (let link of links) {
         if (current === link.href) {
