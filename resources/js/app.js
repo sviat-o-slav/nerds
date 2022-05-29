@@ -1,5 +1,25 @@
 "use strict";
 
+/* Set active page and title code */
+function ucFirstOnly (str) {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function setActivePage() {
+    const links = document.querySelectorAll('.nav-item a');
+    const current = document.location.href;
+
+    for (let link of links) {
+        if (current === link.href) {
+            link.classList.add('nav-item-active');
+            document.title += ' - ' + ucFirstOnly(link.innerText);
+        }
+    }
+}
+
+setActivePage();
+
+
 /* Modal window - Write us*/
 const modal = document.querySelector(".modal-window");
 const writeUsButton = document.querySelector("#writeUsButton");
@@ -28,13 +48,16 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+
+/* Google maps if load hide static and show interactive */
 let googleMap = document.querySelector('.google-map');
 
 googleMap.onload = function () {
     googleMap.style.visibility = 'initial';
 };
 
-/* Slides with manual dots and timer*/
+
+/* Slides carousel with manual dots and timer*/
 if (document.querySelector('.slider')) {
     let slides = document.querySelectorAll('.slide');
     let sliderDots = document.querySelectorAll('.slider-dot');
@@ -82,6 +105,7 @@ if (document.querySelector('.slider')) {
     showSlide(currentSlide);
 }
 
+
 /* Filter pricing toggle input */
 if (document.querySelector('.filter-form')) {
     const min = 0;
@@ -124,7 +148,7 @@ if (document.querySelector('.filter-form')) {
         maxValue = parseInt(maxToggle.value);
     }
 
-    function inputChange(){
+    function inputChange() {
         minInput.value = minValue;
         maxInput.value = maxValue;
     }
@@ -172,16 +196,3 @@ if (document.querySelector('.filter-form')) {
     setGreeBar();
 }
 
-function setActivePage() {
-    const links = document.querySelectorAll('.nav-item a');
-    const current = document.location.href;
-
-    for(let link of links) {
-        if(current === link.href) {
-            link.classList.add('nav-item-active');
-        }
-    }
-
-}
-
-setActivePage();
