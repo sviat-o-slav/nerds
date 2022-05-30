@@ -1,4 +1,3 @@
-#!/bin/bash
 FILE_WEBPACK=webpack.mix.js
 
 install:
