@@ -34,6 +34,8 @@ After that if all complete without errors you can run Sail and starts develop:
 ```
 make sail-up
 ```
+After server is up than you can use it at localhost. For others you can modify docker-compose configuration file.
+
 Stop Sail command:
 ```
 make sail-down
@@ -43,3 +45,4 @@ Make live-time compiling files changes with run command:
 ```
 make watch
 ```
+Live watch browser refresh can be used at localhost port 3000. For others you need to modify webpack configuration file.
