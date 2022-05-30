@@ -21,3 +21,12 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+
+.idea/
+docker-compose.yml
+package-lock.json
+public/css/
+public/fonts/
+public/js/
+public/mix-manifest.json
