@@ -37,8 +37,12 @@ watch:
 resources-prod:
 	composer install --no-dev
 	npm install --production
-	npm run prod
+	
+	php artisan optimize
+	php artisan view:cache
 
+	php artisan config:cache
+	
 resources-dev:
 	composer install
 	npm install

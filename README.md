@@ -20,6 +20,7 @@ If you want to make a production deploy use make file command:
 make install-prod
 ```
 This install composer and npm dependencies packages what need to run project and compile resources for production.
+But after this you need to configure .ENV, especially turn off debug mode and change log level.
 **Deploy for development environment use:**
 ```
 make install-dev
