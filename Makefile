@@ -39,9 +39,6 @@ resources-prod:
 	npm install --production
 	
 	php artisan optimize
-	php artisan view:cache
-
-	php artisan config:cache
 	
 resources-dev:
 	composer install
