@@ -5,19 +5,18 @@ function ucFirstOnly (str) {
     return str[0].toUpperCase() + str.slice(1).toLowerCase();
 }
 
-function setActivePage() {
+function setPageTitle() {
     const links = document.querySelectorAll('.nav-item a');
     const current = document.location.origin + document.location.pathname;
 
     for (let link of links) {
         if (current === link.href) {
-            link.classList.add('nav-item-active');
             document.title += ' - ' + ucFirstOnly(link.innerText);
         }
     }
 }
 
-setActivePage();
+setPageTitle();
 
 
 /* Modal window - Write us*/
