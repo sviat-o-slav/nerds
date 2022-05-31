@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('subtitle', 'Магазин')
+
 @section('header-additional')
     <div class="catalog-title">
         <h1>Магазин готовых шаблонов</h1>

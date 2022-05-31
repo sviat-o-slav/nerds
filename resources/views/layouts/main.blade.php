@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nerds</title>
+    <title>Nerds - @yield('subtitle')</title>
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}"/>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>

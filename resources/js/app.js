@@ -1,24 +1,5 @@
 "use strict";
 
-/* Set active page and title code */
-function ucFirstOnly (str) {
-    return str[0].toUpperCase() + str.slice(1).toLowerCase();
-}
-
-function setPageTitle() {
-    const links = document.querySelectorAll('.nav-item a');
-    const current = document.location.origin + document.location.pathname;
-
-    for (let link of links) {
-        if (current === link.href) {
-            document.title += ' - ' + ucFirstOnly(link.innerText);
-        }
-    }
-}
-
-setPageTitle();
-
-
 /* Modal window - Write us*/
 const modal = document.querySelector(".modal-window");
 const writeUsButton = document.querySelector("#writeUsButton");

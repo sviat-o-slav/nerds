@@ -13,8 +13,6 @@
             </ul>
         </nav>
 
-
-
         @yield('header-additional')
     </div>
 </header>

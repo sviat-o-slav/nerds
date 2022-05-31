@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('subtitle', 'Студия')
+
 @section('header-additional')
     <div class="slider">
 
