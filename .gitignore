@@ -26,8 +26,5 @@ Homestead.json
 .idea/
 docker-compose.yml
 package-lock.json
-public/css/
-public/fonts/
-public/js/
 public/mix-manifest.json
 .vscode/settings.json

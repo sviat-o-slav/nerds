@@ -1,14 +1,12 @@
 FILE_WEBPACK=webpack.mix.js
 
-install:
+install-common:
 	cp .env.example .env
-	composer install
-	npm install
 	php artisan key:generate
 
-install-dev: install sail-install webpack dev
+install-dev: install-common resources-dev sail-install webpack 
 
-install-prod: install prod
+install-prod: install-common resources-prod
 
 webpack:
 	echo "const mix = require('laravel-mix');" | tee $(FILE_WEBPACK) > /dev/null
@@ -21,8 +19,8 @@ webpack:
 	npm install sass-loader sass resolve-url-loader --save-dev --legacy-peer-deps
 
 sail-install:
-	php artisan sail:install --with mariadb
 	npm install sail
+	php artisan sail:install --with mariadb
 
 sail-build:
 	./vendor/bin/sail build
@@ -36,8 +34,12 @@ sail-down:
 watch:
 	npm run watch
 
-prod:
+resources-prod:
+	composer install --no-dev
+	npm install --production
 	npm run prod
 
-dev:
+resources-dev:
+	composer install
+	npm install
 	npm run dev
