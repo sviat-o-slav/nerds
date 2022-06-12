@@ -4,9 +4,9 @@ install-common:
 	cp .env.example .env
 	php artisan key:generate
 
-install-dev: install-common resources-dev sail-install webpack 
+install-dev: resources-dev install-common sail-install webpack 
 
-install-prod: install-common resources-prod
+install-prod: resources-prod install-common
 
 webpack:
 	echo "const mix = require('laravel-mix');" | tee $(FILE_WEBPACK) > /dev/null
