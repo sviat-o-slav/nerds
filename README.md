@@ -1,5 +1,5 @@
 # Nerds Web Site Project
-This is a simple site project of UI market place.
+Third project test of front UI market place template
 ## Technical information
 It is created with Laravel engine.
 ### Requirements for production
